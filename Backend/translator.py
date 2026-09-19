@@ -1,6 +1,7 @@
 
 
 from functools import lru_cache
+
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
 MODEL_NAME = "facebook/nllb-200-distilled-600M"
@@ -63,8 +64,7 @@ def translate_batch(
 
 
 if __name__ == "__main__":
-    # Quick manual test — run `python translator.py` to sanity-check
-    # that the model downloads and produces plausible Nepali output.
+   
     test_sentences = [
         "Machine learning is a method of teaching computers to learn from data.",
         "A neural network is a computational model inspired by the human brain.",
