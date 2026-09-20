@@ -1,9 +1,12 @@
 from functools import lru_cache
+import os
 
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-MODEL_NAME = "Qwen/Qwen2.5-1.5B-Instruct"
+torch.set_num_threads(os.cpu_count())
+
+MODEL_NAME = "Qwen/Qwen2.5-0.5B-Instruct"
 
 SYSTEM_PROMPT = (
     "You are a patient teacher explaining technical computer science "
@@ -26,7 +29,7 @@ def _load_model_and_tokenizer():
     return tokenizer, model
 
 
-def simplify_text(text: str, max_new_tokens: int = 150) -> str:
+def simplify_text(text: str, max_new_tokens: int = 100) -> str:
     if not text or not text.strip():
         return ""
 

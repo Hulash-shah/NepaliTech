@@ -1,122 +1,138 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
+
+const API_URL = "http://localhost:8000/translate";
+
+const LEVELS = [
+  { id: "beginner", label: "Beginner" },
+  { id: "intermediate", label: "Intermediate" },
+];
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [text, setText] = useState("");
+  const [level, setLevel] = useState("beginner");
+  const [result, setResult] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    if (!text.trim()) return;
+
+    setLoading(true);
+    setError(null);
+    setResult(null);
+
+    try {
+      const response = await fetch(API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Request failed with status ${response.status}`);
+      }
+
+      const data = await response.json();
+      setResult(data);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  }
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+    <div className="page">
+      <div className="watermark" aria-hidden="true">अ</div>
+
+      <header className="hero">
+        <p className="wordmark">
+          नेपाली<span>Tech</span>
+        </p>
+        <h1>Say it in Nepali. Understand it too.</h1>
+        <p className="lede">
+          Paste a technical sentence in English. Get a Nepali translation
+          and a plain-language explanation beside it.
+        </p>
+      </header>
+
+      <form onSubmit={handleSubmit} className="form">
+        <textarea
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          rows={5}
+          placeholder="A neural network is a computational model inspired by the human brain."
+        />
+
+        <div className="form-row">
+          <div className="segmented" role="group" aria-label="Explanation level">
+            {LEVELS.map(({ id, label }) => (
+              <button
+                key={id}
+                type="button"
+                className={level === id ? "active" : ""}
+                aria-pressed={level === id}
+                onClick={() => setLevel(id)}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+
+          <button
+            type="submit"
+            className="submit"
+            disabled={loading || !text.trim()}
+          >
+            {loading ? "Translating" : "Translate & Simplify"}
+          </button>
         </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
+      </form>
+
+      {error && (
+        <p className="error">
+          Something went wrong. Check that the backend is running, then try
+          again.
+        </p>
+      )}
+
+      {loading && (
+        <div className="skeleton" aria-hidden="true">
+          <div className="skeleton-line long" />
+          <div className="skeleton-line" />
+          <div className="skeleton-line short" />
+        </div>
+      )}
+
+      {result && !loading && (
+        <div className="results">
+          <p className="detected">
+            Detected input: {result.detected_language === "nepali" ? "Nepali" : "English"}
           </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
 
-      <div className="ticks"></div>
+          <section className="translation">
+            <h2>
+              {result.detected_language === "nepali"
+                ? "English translation"
+                : "Nepali translation"}
+            </h2>
+            <blockquote
+              lang={result.detected_language === "nepali" ? "en" : "ne"}
+            >
+              {result.translation}
+            </blockquote>
+          </section>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
+          <section className="explanation">
+            <h2>In plain words</h2>
+            <p>{result.simple_explanation_ne}</p>
+          </section>
         </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+      )}
+    </div>
+  );
 }
 
-export default App
+export default App;
