@@ -1,6 +1,6 @@
 # NepaliTech — Nepali Technical Content Translator & Simplifier
 
-An NLP pipeline that turns technical English text into Nepali translation plus a beginner-friendly Nepali explanation, built as part of a 100 Days Data Science & Machine Learning learning journey at Skill Shikshya.
+An NLP pipeline that turns technical English text into Nepali translation plus a beginner-friendly Nepali explanation, built as part of a 100 Days Data Science & Machine Learning learning journey.
 
 A plain translator isn't enough for this problem. Technical English often translates into Nepali that is grammatically correct but still hard to follow for a beginner, or mistranslates figurative language (see [Error Analysis](#error-analysis)). This project instead runs translation and explanation as two separate, purpose-built steps.
 
