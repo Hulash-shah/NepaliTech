@@ -1,8 +1,9 @@
 from functools import lru_cache
+import os
 
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
-MODEL_NAME = "facebook/nllb-200-distilled-1.3B"
+MODEL_NAME = os.environ.get("NLLB_MODEL", "facebook/nllb-200-distilled-1.3B")
 
 LANG_CODES = {
     "english": "eng_Latn",

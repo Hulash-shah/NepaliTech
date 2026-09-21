@@ -1,0 +1,106 @@
+{
+  "bleu": 24.731026657018806,
+  "chrf": 62.266305663667886,
+  "rows": [
+    {
+      "source": "Machine learning is a method of teaching computers to learn from data.",
+      "reference": "मेसिन लर्निङ भनेको डेटाबाट सिक्न कम्प्युटरलाई सिकाउने एउटा विधि हो।",
+      "hypothesis": "मेशिन लर्निङ भनेको कम्प्युटरलाई डाटाबाट सिक्न सिकाउने विधि हो।"
+    },
+    {
+      "source": "A neural network is a computational model inspired by the human brain.",
+      "reference": "न्युरल नेटवर्क भनेको मानव मस्तिष्कबाट प्रेरित एउटा गणनात्मक मोडेल हो।",
+      "hypothesis": "एक न्यूरल नेटवर्क मानव मस्तिष्कबाट प्रेरित एक कम्प्युटेशनल मोडेल हो।"
+    },
+    {
+      "source": "An API allows two software systems to communicate with each other.",
+      "reference": "एपीआईले दुई सफ्टवेयर प्रणालीलाई एक-अर्कासँग सञ्चार गर्न अनुमति दिन्छ।",
+      "hypothesis": "एउटा एपिआईले दुई सफ्टवेयर प्रणालीहरूलाई एक अर्कासँग कुराकानी गर्न अनुमति दिन्छ।"
+    },
+    {
+      "source": "A database stores and organizes large amounts of data.",
+      "reference": "डाटाबेसले ठूलो परिमाणमा डेटा भण्डारण र व्यवस्थित गर्दछ।",
+      "hypothesis": "एउटा डाटाबेसले ठूलो मात्रामा डाटा भण्डारण र व्यवस्थित गर्दछ।"
+    },
+    {
+      "source": "An algorithm is a step by step procedure for solving a problem.",
+      "reference": "एल्गोरिदम भनेको समस्या समाधान गर्नका लागि चरणबद्ध प्रक्रिया हो।",
+      "hypothesis": "एल्गोरिथ्म एउटा समस्या समाधान गर्नका लागि एक कदम पछि कदम प्रक्रिया हो।"
+    },
+    {
+      "source": "Deep learning uses multiple layers of neural networks to process data.",
+      "reference": "डीप लर्निङले डेटा प्रशोधन गर्न न्युरल नेटवर्कका धेरै तहहरू प्रयोग गर्दछ।",
+      "hypothesis": "गहिरो सिकाइले डाटा प्रशोधन गर्न न्यूरोनल नेटवर्कको धेरै तहहरू प्रयोग गर्दछ।"
+    },
+    {
+      "source": "A variable stores a value that can change during program execution.",
+      "reference": "भेरिएबलले प्रोग्राम सञ्चालनको क्रममा परिवर्तन हुन सक्ने मान भण्डारण गर्दछ।",
+      "hypothesis": "एउटा चरले एउटा मान भण्डार गर्दछ जुन प्रोग्राम कार्यान्वयनको समयमा परिवर्तन हुन सक्छ।"
+    },
+    {
+      "source": "Cloud computing allows users to access computing resources over the internet.",
+      "reference": "क्लाउड कम्प्युटिङले प्रयोगकर्तालाई इन्टरनेटमार्फत कम्प्युटिङ स्रोतहरू पहुँच गर्न अनुमति दिन्छ।",
+      "hypothesis": "क्लाउड कम्प्युटिङले प्रयोगकर्ताहरूलाई इन्टरनेटमा कम्प्युटिङ स्रोतहरू पहुँच गर्न अनुमति दिन्छ।"
+    },
+    {
+      "source": "A function is a reusable block of code that performs a specific task.",
+      "reference": "फङ्सन भनेको एउटा निश्चित कार्य सम्पादन गर्ने पुनः प्रयोग गर्न सकिने कोडको खण्ड हो।",
+      "hypothesis": "एउटा प्रकार्य कोडको पुनः प्रयोगयोग्य ब्लक हो जसले एक विशिष्ट कार्य गर्दछ।"
+    },
+    {
+      "source": "Data preprocessing prepares raw data for use in a machine learning model.",
+      "reference": "डेटा प्रिप्रोसेसिङले कच्चा डेटालाई मेसिन लर्निङ मोडेलमा प्रयोग गर्नका लागि तयार पार्दछ।",
+      "hypothesis": "डाटा प्रिप्रोसेसिंगले मेशिन लर्निङ मोडलमा प्रयोगको लागि कच्चा डाटा तयार गर्दछ।"
+    },
+    {
+      "source": "A dataset is a collection of related data used for analysis or training.",
+      "reference": "डेटासेट भनेको विश्लेषण वा तालिमका लागि प्रयोग गरिने सम्बन्धित डेटाको सङ्ग्रह हो।",
+      "hypothesis": "डाटासेट विश्लेषण वा प्रशिक्षणको लागि प्रयोग गरिने सम्बन्धित डेटाको संग्रह हो।"
+    },
+    {
+      "source": "Overfitting occurs when a model learns the training data too closely.",
+      "reference": "ओभरफिटिङ तब हुन्छ जब मोडेलले तालिम डेटालाई अत्यधिक नजिकबाट सिक्छ।",
+      "hypothesis": "ओभरफिटिंग तब हुन्छ जब एउटा मोडलले प्रशिक्षणको डाटा धेरै नजिकबाट सिक्छ।"
+    },
+    {
+      "source": "A server responds to requests sent by a client over a network.",
+      "reference": "सर्भरले नेटवर्कमार्फत क्लाइन्टले पठाएको अनुरोधको जवाफ दिन्छ।",
+      "hypothesis": "सर्भरले नेटवर्कमा क्लाइन्टद्वारा पठाइएका अनुरोधहरूलाई प्रतिक्रिया दिन्छ।"
+    },
+    {
+      "source": "Version control helps developers track changes to their code over time.",
+      "reference": "भर्सन कन्ट्रोलले डेभलपरहरूलाई समयसँगै आफ्नो कोडमा भएका परिवर्तनहरू ट्र्याक गर्न मद्दत गर्दछ।",
+      "hypothesis": "संस्करण नियन्त्रणले विकासकर्ताहरूलाई समयको साथ तिनीहरूको कोडमा परिवर्तनहरू ट्र्याक गर्न मद्दत गर्दछ।"
+    },
+    {
+      "source": "A neural network is the backbone of deep learning.",
+      "reference": "न्युरल नेटवर्क डीप लर्निङको आधार हो।",
+      "hypothesis": "न्यूरोनल नेटवर्क गहिरो सिकाइको मेरुदण्ड हो।"
+    },
+    {
+      "source": "A string is a sequence of characters.",
+      "reference": "स्ट्रिङ भनेको क्यारेक्टरहरूको अनुक्रम हो।",
+      "hypothesis": "एउटा स्ट्रिंग अक्षरहरूको अनुक्रम हो।"
+    },
+    {
+      "source": "An array stores multiple values in a single variable.",
+      "reference": "एरेले धेरै मानहरूलाई एउटै भेरिएबलमा भण्डारण गर्दछ।",
+      "hypothesis": "एउटा एर्रेले एउटै चरमा धेरै मानहरू भण्डार गर्दछ।"
+    },
+    {
+      "source": "Natural language processing enables computers to understand human language.",
+      "reference": "प्राकृतिक भाषा प्रशोधनले कम्प्युटरलाई मानव भाषा बुझ्न सक्षम बनाउँछ।",
+      "hypothesis": "प्राकृतिक भाषा प्रशोधनले कम्प्युटरहरूलाई मानव भाषा बुझ्न सक्षम बनाउँछ।"
+    },
+    {
+      "source": "A loop repeats a block of code until a condition is met.",
+      "reference": "लुपले कुनै सर्त पूरा नभएसम्म कोडको खण्डलाई दोहोर्याउँछ।",
+      "hypothesis": "एउटा लूपले कुनै सर्त पूरा नभएसम्म कोडको ब्लक दोहोर्याउँछ।"
+    },
+    {
+      "source": "Tokenization splits text into smaller units called tokens.",
+      "reference": "टोकनाइजेसनले पाठलाई टोकन भनिने साना एकाइहरूमा विभाजन गर्दछ।",
+      "hypothesis": "टोकनकरणले पाठलाई टोकन भनिने साना एकाइहरूमा विभाजित गर्दछ।"
+    }
+  ]
+}

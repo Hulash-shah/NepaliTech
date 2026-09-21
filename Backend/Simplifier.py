@@ -6,7 +6,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 
 torch.set_num_threads(os.cpu_count())
 
-MODEL_NAME = "Qwen/Qwen2.5-0.5B-Instruct"
+MODEL_NAME = os.environ.get("QWEN_MODEL", "Qwen/Qwen2.5-0.5B-Instruct")
 
 SYSTEM_PROMPT = (
     "You are a patient teacher explaining technical computer science "
