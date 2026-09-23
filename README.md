@@ -149,4 +149,4 @@ Root cause: idiomatic, figurative phrasing is rarer in parallel training data th
 
 ## Acknowledgements
 
-Built as part of a 100 Days Data Science & Machine Learning apprenticeship at Skill Shikshya.
+Built as part of a 100 Days Data Science & Machine Learning apprenticeship.
